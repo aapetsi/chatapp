@@ -14,6 +14,21 @@ const useStyles = makeStyles((theme) => ({
     width: '90%',
     marginRight: theme.spacing(2),
   },
+  currentUser: {
+    backgroundColor: '#bbdefb',
+    padding: '20px',
+    borderRadius: '10px',
+    maxWidth: '300px',
+    wordWrap: 'break-word',
+    marginLeft: '80%',
+  },
+  otherUser: {
+    backgroundColor: '#1E90FF',
+    padding: '20px',
+    borderRadius: '10px',
+    maxWidth: '300px',
+    wordWrap: 'break-word',
+  },
 }))
 
 const Chat = () => {
@@ -77,7 +92,9 @@ const Chat = () => {
           return (
             <p
               key={chat.timestamp}
-              className={'chat-bubble ' + (user.uid ? 'current-user' : '')}
+              className={
+                chat.uid === user.uid ? classes.currentUser : classes.otherUser
+              }
             >
               {chat.content}
               <br />

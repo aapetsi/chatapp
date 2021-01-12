@@ -10,7 +10,6 @@ import {
   IconButton,
 } from '@material-ui/core'
 import { Menu } from '@material-ui/icons'
-import '../styles/Header.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {

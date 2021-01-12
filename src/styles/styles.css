@@ -31,9 +31,10 @@ body {
   text-align: right;
 }
 
-.chat-bubble .chat-bubble.current-user {
+.chat-bubble .chat-bubble .current-user {
   margin-left: auto;
-  background-color: #a5d6a7;
+  /* background-color: #a5d6a7; */
+  background-color: #19871d;
 }
 
 .form-control {
