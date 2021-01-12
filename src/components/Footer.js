@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className='pt-5'>
       <div className='container text-center'>
-        <p>ChatApp 2021</p>
+        <p>ChatApp version 1.0.0</p>
       </div>
     </footer>
   )

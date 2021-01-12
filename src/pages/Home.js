@@ -40,7 +40,7 @@ class HomePage extends Component {
             </div>
           </div>
         </section>
-        <Footer></Footer>
+        <Footer />
       </div>
     )
   }
