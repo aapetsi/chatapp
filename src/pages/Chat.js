@@ -69,6 +69,7 @@ const Chat = () => {
         content: content,
         timestamp: Date.now(),
         uid: user.uid,
+        email: user.email,
       })
       setContent('')
     } catch (error) {
@@ -98,9 +99,12 @@ const Chat = () => {
             >
               {chat.content}
               <br />
+
               <span className='chat-time float-right'>
                 {formatTime(chat.timestamp)}
               </span>
+              <br />
+              <Typography component='summary'>{chat.email}</Typography>
             </p>
           )
         })}
