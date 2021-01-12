@@ -11,6 +11,7 @@ import {
   Divider,
   Grid,
 } from '@material-ui/core'
+import Spinner from '../components/Spinner'
 import { LockOutlined, Fingerprint } from '@material-ui/icons'
 import { signin, singInWithGoogle } from '../helpers/auth'
 
@@ -55,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = () => {
   const [user, setUser] = useState({ email: '', password: '' })
+  const [isOpen, setIsOpen] = useState(false)
   const [error, setError] = useState(null)
   const classes = useStyles()
 
@@ -67,22 +69,27 @@ const Login = () => {
     e.preventDefault()
     setUser('')
     try {
+      setIsOpen(true)
       await signin(email, password)
     } catch (error) {
+      setIsOpen(false)
       setError(error.message)
     }
   }
 
   const googleSignIn = async () => {
     try {
+      setIsOpen(true)
       await singInWithGoogle()
     } catch (error) {
+      setIsOpen(false)
       setError(error.message)
     }
   }
 
   return (
     <React.Fragment>
+      <Spinner open={isOpen} />
       <Container component='main' maxWidth='xs'>
         <CssBaseline />
         <div className={classes.paper}>
